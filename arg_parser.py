@@ -10,9 +10,7 @@ def parse_args(args):
     args = parser.parse_args(args)
 
     if not args.test:
-        if args.n is None and args.a is None:
-            raise ValueError('The program must accept arguments as input: either --test or -a and -n')
-        elif args.n is None or args.a is None:
+        if args.n is None or args.a is None:
             raise ValueError('-n and -a are required when not using --test')
         elif args.n not in range(501):
             raise ValueError('The value of the -n argument must be between 0 and 500')
